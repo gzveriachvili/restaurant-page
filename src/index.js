@@ -1,6 +1,4 @@
-const content = document.querySelector('#content');
-const testPara = document.createElement('p');
+import { PageLoad } from './modules/page-load';
 
-testPara.textContent = 'Tamada Georgian Restaurant';
-
-content.appendChild(testPara);
+PageLoad.createHeader();
+PageLoad.createFooter();
