@@ -1,5 +1,6 @@
 import '../css/style.css';
 import Logo from '../img/logo.png';
+import Decor_Bottom from '../img/decor_bottom.png';
 import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
@@ -73,6 +74,11 @@ const PageLoad = (() => {
   const createFooter = () => {
     const footer = document.createElement('footer');
     footer.classList.add('footer');
+
+    const decorBottom = new Image();
+    decorBottom.src = Decor_Bottom;
+    decorBottom.classList.add('decor-bottom');
+    content.appendChild(decorBottom);
     const footerText = document.createElement('p');
     footerText.classList.add('footer-text');
     footerText.innerHTML = `
@@ -82,7 +88,8 @@ const PageLoad = (() => {
     footer.appendChild(footerText);
     content.appendChild(footer);
   };
-  return { createHeader, createFooter };
+
+  return { createHeader, createFooter, content };
 })();
 
 export { PageLoad };
