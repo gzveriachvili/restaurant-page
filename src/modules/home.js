@@ -26,6 +26,9 @@ const HomeLoad = (() => {
 
     const child3 = document.createElement('div');
     child3.classList.add('div3');
+    const child3Text = document.createElement('p');
+    child3Text.textContent = 'რესტორანი';
+    child3.appendChild(child3Text);
 
     const child4 = document.createElement('div');
     child4.classList.add('div4');
