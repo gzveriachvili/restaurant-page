@@ -27,8 +27,16 @@ const HomeLoad = (() => {
     const child3 = document.createElement('div');
     child3.classList.add('div3');
     const child3Text = document.createElement('p');
-    child3Text.textContent = 'რესტორანი';
+    child3Text.textContent = 'თამადა';
     child3.appendChild(child3Text);
+
+    child3Text.addEventListener('mouseover', () => {
+      child3Text.textContent = 'Tamada';
+    });
+
+    child3Text.addEventListener('mouseout', () => {
+      child3Text.textContent = 'თამადა';
+    });
 
     const child4 = document.createElement('div');
     child4.classList.add('div4');
@@ -47,7 +55,9 @@ const HomeLoad = (() => {
     homeContainer.appendChild(child3);
     homeContainer.appendChild(child4);
 
-    content.appendChild(homeContainer);
+    homeContainer.classList.toggle('new-page');
+    content.insertBefore(homeContainer, content.childNodes[1]);
+    return homeContainer;
   };
   return { createHome };
 })();

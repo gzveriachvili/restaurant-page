@@ -1,18 +1,30 @@
 import { PageLoad } from './modules/page-load';
 import { HomeLoad } from './modules/home';
-import { createMenu } from './modules/menu';
+import { MenuLoad } from './modules/menu';
+import { ContactLoad } from './modules/contact';
 
 PageLoad.createHeader();
 HomeLoad.createHome();
 PageLoad.createFooter();
 
+const homeBtn = document.querySelector('.right-side p:nth-child(1)');
 const menuBtn = document.querySelector('.right-side p:nth-child(2)');
+const contactBtn = document.querySelector('.right-side p:nth-child(3)');
+
 const container = document.querySelector('#content');
-let canRemove = true;
+
 menuBtn.addEventListener('click', () => {
-  if (canRemove) {
-    container.removeChild(container.childNodes[1]);
-    canRemove = false;
-    createMenu();
-  }
+  container.removeChild(container.childNodes[1]);
+  MenuLoad.createMenu();
+});
+
+homeBtn.addEventListener('click', () => {
+  container.removeChild(container.childNodes[1]);
+  HomeLoad.createHome();
+});
+
+contactBtn.addEventListener('click', () => {
+  container.removeChild(container.childNodes[1]);
+
+  ContactLoad.createContact();
 });
